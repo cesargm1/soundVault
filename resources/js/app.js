@@ -111,3 +111,18 @@ spanAlbum.classList.add('album-meta')
 spanAlbum.textContent = `${album.anio} - ${album.genero}`
 albunCard.appendChild(spanAlbum)
 })
+
+const buttonGeneres = document.querySelectorAll('.genre')
+buttonGeneres.forEach((buttonGenere) => {
+    buttonGenere.addEventListener('click', (e) =>  {
+    const elementoPulsado = e.target;
+
+    const filterGender = albumes.filter((album) => {
+        if(elementoPulsado.textContent === album.genero) {
+            return album.genero
+        }
+    })
+    console.log(filterGender)
+    })
+})
+
